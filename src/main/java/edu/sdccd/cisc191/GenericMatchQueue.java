@@ -6,25 +6,30 @@ public class GenericMatchQueue<T> {
 
     private final LinkedList<T> items = new LinkedList<>();
 
+    // Add item to the back of the queue
     public void enqueue(T item) {
-        // TODO: add the item to the back of the queue
+        items.addLast(item);
     }
 
+    // Remove and return the front item (FIFO order)
     public T dequeue() {
-        // TODO: remove and return the front item
-        // throw IllegalStateException if the queue is empty
-        return null;
+        if (items.isEmpty()) {
+            throw new IllegalStateException("Queue is empty");
+        }
+        return items.removeFirst();
     }
 
+    // Return the front item without removing it
     public T peek() {
-        // TODO: return the front item without removing it
-        // throw IllegalStateException if the queue is empty
-        return null;
+        if (items.isEmpty()) {
+            throw new IllegalStateException("Queue is empty");
+        }
+        return items.getFirst();
     }
 
+    // True if there are no items in the queue
     public boolean isEmpty() {
-        // TODO: return true when the queue has no items
-        return false;
+        return items.isEmpty();
     }
 
     public int size() {

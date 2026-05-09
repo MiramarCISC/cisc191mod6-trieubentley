@@ -58,7 +58,7 @@ public class GameServerAnalytics {
 
     // Return whichever item the comparator ranks higher
     public static <T> T pickHigherRated(T first, T second, Comparator<T> comparator) {
-        return comparator.compare(second, first) > 0 ? second : first;
+        return comparator.compare(first, second) > 0 ? first : second;
     }
 
     // Tier cutoffs

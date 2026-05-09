@@ -8,6 +8,9 @@ public class GenericMatchQueue<T> {
 
     // Add item to the back of the queue
     public void enqueue(T item) {
+       if (item == null) {
+           throw new IllegalArgumentException("Cannot enqueue null item");
+       }
         items.addLast(item);
     }
 
